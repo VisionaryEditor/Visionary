@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AppIconBeta (tvOS, TestFlight, Front).png",
+      "idiom" : "tv"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
