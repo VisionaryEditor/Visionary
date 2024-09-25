@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23086.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="dark"/>
+    <device id="iPad13_0rounded" orientation="landscape" layout="fullscreen" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23076"/>
@@ -10,57 +10,434 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController title="Main" id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1376" height="1032"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-oj-BgN">
-                                <rect key="frame" x="18" y="396" width="1144" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zig-x9-agv">
-                                <rect key="frame" x="0.0" y="24" width="1180" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-Rz-yTj">
+                                <rect key="frame" x="0.0" y="20" width="1376" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" id="dAO-N0-HVV">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vab-aI-j68">
-                                            <rect key="frame" x="20" y="7" width="1140" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <menu key="menu" id="Snr-vG-0Ef">
-                                                <children>
-                                                    <command title="Close" discoverabilityTitle="" id="sJb-Fh-ASK">
-                                                        <string key="input" base64-UTF8="YES">
+                                    <navigationItem id="xSL-PN-xef">
+                                        <nil key="title"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem style="plain" id="O8v-oy-5ao">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="snm-di-gMC">
+                                                    <rect key="frame" x="20" y="10" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="5d4-xr-fDH">
+                                                        <children>
+                                                            <menu title="Save..." id="IeQ-mt-5MI">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Save" discoverabilityTitle="" input="s" id="BB5-dJ-5wy">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Save As..." discoverabilityTitle="" input="S" id="VXk-ma-4BZ">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Import &amp; Export" id="FtH-F4-nMX">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Import Media..." discoverabilityTitle="" input="i" id="K7Y-W9-uXJ">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Export" discoverabilityTitle="" input="e" id="sge-Bh-jZs">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Properties" id="bFv-ZS-5ce">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Properties" discoverabilityTitle="" id="ZZu-LV-Prj">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <string key="input" base64-UTF8="YES">
+DQ
+</string>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <command title="Close Editor" discoverabilityTitle="" id="DTi-69-pS4">
+                                                                <string key="input" base64-UTF8="YES">
 Gw
 </string>
-                                                    </command>
-                                                    <menu title="Save..." id="nHy-6P-OrG">
-                                                        <menuOptions key="menuOptions" displayInline="YES"/>
-                                                        <children>
-                                                            <command title="Save" discoverabilityTitle="" input="s" id="QK1-hU-lrb">
-                                                                <menuElementAttributes key="attributes" disabled="YES"/>
-                                                                <keyModifierFlags key="modifierFlags" command="YES"/>
                                                             </command>
-                                                            <command title="Save As..." discoverabilityTitle="" input="S" id="DrE-FE-qSi">
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="File"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="Tkp-6Q-Xe6">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="j7H-ly-kr0">
+                                                    <rect key="frame" x="58" y="10" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="PvA-2F-q4R">
+                                                        <children>
+                                                            <menu title="Undo and Redo" id="c8q-6B-3RB">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Undo" discoverabilityTitle="" input="z" id="cSd-q1-fwL">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Redo" discoverabilityTitle="" input="Z" id="Hmr-fV-fA3">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Cut, Copy and Paste" id="CE7-IR-fn0">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Cut" discoverabilityTitle="" input="x" id="tRE-Sw-nig">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Copy" discoverabilityTitle="" input="c" id="G3U-hK-NK8">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Paste" discoverabilityTitle="" input="v" id="C8g-8t-lAr">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Paste Repeat..." discoverabilityTitle="" input="b" id="lWz-qK-zC0">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Paste Insert" discoverabilityTitle="" input="V" id="H62-Bx-3LF">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Delete and Trim" id="csu-0k-tiX">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Delete" discoverabilityTitle="" input="" id="1QK-sJ-ZLU">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                    <menu title="Trim..." id="V5n-YN-GNL">
+                                                                        <children>
+                                                                            <command title="Start" discoverabilityTitle="" input="t" id="Ck8-wN-8B2">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                <keyModifierFlags key="modifierFlags" control="YES" command="YES"/>
+                                                                            </command>
+                                                                            <command title="End" discoverabilityTitle="" input="t" id="Iqy-MG-GQW">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                <keyModifierFlags key="modifierFlags" option="YES" command="YES"/>
+                                                                            </command>
+                                                                            <command title="Split" discoverabilityTitle="" input="s" id="tZU-YZ-1Vz">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                            </command>
+                                                                        </children>
+                                                                    </menu>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Navigate, Select, Etc." id="hps-u5-6cK">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <menu title="Navigate" id="Z6x-iK-cJY">
+                                                                        <children>
+                                                                            <menu title="Go To..." id="Zpz-Gk-qVO">
+                                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                                <children>
+                                                                                    <command title="Go to Time..." discoverabilityTitle="" input="g" id="XfV-9f-iu1">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Go to Project Start" discoverabilityTitle="" input="" id="gQ5-8O-mG0">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" option="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Go to Project End" discoverabilityTitle="" input="" id="evg-H4-78l">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" option="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Go to Time Selection Start" discoverabilityTitle="" input="" id="ubi-Nk-IyC">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" shift="YES" command="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Go to Time Selection End" discoverabilityTitle="" input="" id="BYi-3v-qxO">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" shift="YES" command="YES"/>
+                                                                                    </command>
+                                                                                </children>
+                                                                            </menu>
+                                                                            <menu title="Move" id="jyc-HI-tQC">
+                                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                                <children>
+                                                                                    <command title="Move Right by Frame" discoverabilityTitle="" input="" id="gpb-Vu-d7x">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Move Left by Frame" discoverabilityTitle="" input="" id="3eW-Ah-c67">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Move Left by Pixel" discoverabilityTitle="" input="" id="36S-kE-8Bm">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" shift="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Move Right by Pixel" discoverabilityTitle="" input="" id="xUa-XU-s0p">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" shift="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Move Left by Marker/Region" discoverabilityTitle="" input="" id="Hdi-re-XFd">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Move Right by Marker/Region" discoverabilityTitle="" input="" id="6yv-Qa-vOl">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                                    </command>
+                                                                                </children>
+                                                                            </menu>
+                                                                            <command title="Center View around Cursor" discoverabilityTitle="" input="|" id="jio-uD-jwd">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                            </command>
+                                                                        </children>
+                                                                    </menu>
+                                                                    <menu title="Select..." id="kW8-k1-juD">
+                                                                        <children>
+                                                                            <menu title="All" id="yh7-JV-pLq">
+                                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                                <children>
+                                                                                    <command title="All" discoverabilityTitle="" input="a" id="PNO-xf-ioa">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                                    </command>
+                                                                                    <command title="All After Cursor" discoverabilityTitle="" id="iwm-VC-h7c">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                </children>
+                                                                            </menu>
+                                                                            <menu title="Events" id="S2Z-jX-i9E">
+                                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                                <children>
+                                                                                    <command title="Event Start" discoverabilityTitle="" input="7" id="UCB-CU-0aR">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Event End" discoverabilityTitle="" input="9" id="SNI-i2-Rm3">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Toggle Expanded Edit Mode" discoverabilityTitle="" input="5" id="aEq-Nb-3zl">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                </children>
+                                                                            </menu>
+                                                                            <command title="Loop Playback" discoverabilityTitle="" input="q" id="pyZ-XH-loH">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                            </command>
+                                                                            <command title="Zoom Selection" discoverabilityTitle="" id="UOL-QD-mj3">
+                                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                            </command>
+                                                                            <menu title="Set Selection" id="XY3-3l-uzc">
+                                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                                <children>
+                                                                                    <command title="Set Selection to View" discoverabilityTitle="" id="6dP-Qd-EFu">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Set Selection to Project" discoverabilityTitle="" id="DjM-8g-tfc">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Select Loop Region" discoverabilityTitle="" input="Q" id="A1x-m6-b8e">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Set Selection Start" discoverabilityTitle="" input="i" id="qSN-DJ-Yqp">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Set Selection End" discoverabilityTitle="" input="o" id="Lzl-KO-ZgC">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Set Selection to Previous Selected Element" discoverabilityTitle="" input="" id="VPD-8h-g1d">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" control="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Set Selection to Next Selected Element" discoverabilityTitle="" input="" id="3jR-d5-c1i">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <keyModifierFlags key="modifierFlags" control="YES"/>
+                                                                                    </command>
+                                                                                    <command title="Restore Previous Time Selection" discoverabilityTitle="" id="XFr-fb-CXy">
+                                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                                        <string key="input" base64-UTF8="YES">
+CA
+</string>
+                                                                                    </command>
+                                                                                </children>
+                                                                            </menu>
+                                                                        </children>
+                                                                    </menu>
+                                                                </children>
+                                                            </menu>
+                                                            <command title="Undo All" discoverabilityTitle="" id="TX8-MK-wiJ">
+                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                            </command>
+                                                            <command title="Clear Edit History..." discoverabilityTitle="" id="9ZL-wg-WXI">
+                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                            </command>
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="Edit"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="nkK-AG-oVD">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="g9h-0X-dWY">
+                                                    <rect key="frame" x="96" y="10" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="yEm-5e-34N">
+                                                        <children>
+                                                            <command title="Coming Soon..." id="AFq-hI-zSk">
+                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                            </command>
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="View"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="UvL-bi-nPF">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KTn-WN-Zs6">
+                                                    <rect key="frame" x="138" y="10" width="40" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="Ppe-Sd-6XY">
+                                                        <children>
+                                                            <menu title="Track" id="XK6-14-gYP">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Video Track" input="q" id="Ywj-ht-NSV">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Audio Track" input="Q" id="iwb-4b-Qrj">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
+                                                                    </command>
+                                                                    <command title="Adjustment Track" input="q" id="jIT-8A-hsA">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                        <keyModifierFlags key="modifierFlags" option="YES" command="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Subtitles" id="Gbq-or-Huz">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Subtitles from File" discoverabilityTitle="" id="ls7-3o-nvY">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                    <command title="Subtitles from Regions" discoverabilityTitle="" id="L8Q-iW-IjW">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Media" id="thR-Ni-irI">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Text..." id="UQT-Ou-aM1">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <menu title="Marker &amp; Region" id="iVU-qs-woB">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Marker" discoverabilityTitle="" input="m" id="1FX-SH-322">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                    <command title="Region" discoverabilityTitle="" input="r" id="zXl-vK-Dgn">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="Insert"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="YrX-3M-ZiA">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vN2-dt-3Cb">
+                                                    <rect key="frame" x="186" y="10" width="37" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="oWD-Sl-dfx">
+                                                        <children>
+                                                            <menu title="Video &amp; Audio" id="Xkc-YE-QSY">
+                                                                <menuOptions key="menuOptions" displayInline="YES"/>
+                                                                <children>
+                                                                    <command title="Video Event Pan/Crop..." id="yzl-lG-Jz1">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                    <command title="Video Event FX..." id="ccH-Oa-mBD">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                    <command title="Audio Event FX..." id="7At-Wv-NGW">
+                                                                        <menuElementAttributes key="attributes" disabled="YES"/>
+                                                                    </command>
+                                                                </children>
+                                                            </menu>
+                                                            <command title="Jumpcut..." input="j" id="IC7-qZ-ISy">
                                                                 <menuElementAttributes key="attributes" disabled="YES"/>
                                                                 <keyModifierFlags key="modifierFlags" command="YES"/>
                                                             </command>
                                                         </children>
                                                     </menu>
-                                                    <command title="Export" discoverabilityTitle="" input="e" id="Phn-Ob-8a7">
-                                                        <menuElementAttributes key="attributes" disabled="YES"/>
-                                                        <keyModifierFlags key="modifierFlags" command="YES"/>
-                                                    </command>
-                                                </children>
-                                            </menu>
-                                            <state key="normal" title="File"/>
-                                        </button>
-                                    </barButtonItem>
+                                                    <state key="normal" title="Tools"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="vso-YU-oBC">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QhC-DO-QfZ">
+                                                    <rect key="frame" x="231" y="10" width="54" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="jcY-rK-zI7">
+                                                        <children>
+                                                            <command title="Coming Soon..." id="2vf-Nx-RXm">
+                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                            </command>
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="Options"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="Dfb-cC-DYo">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="s0S-y0-6cF">
+                                                    <rect key="frame" x="293" y="10" width="32" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <menu key="menu" id="E76-Ez-rAl">
+                                                        <children>
+                                                            <command title="Coming Soon..." id="GS0-GB-RKb">
+                                                                <menuElementAttributes key="attributes" disabled="YES"/>
+                                                            </command>
+                                                        </children>
+                                                    </menu>
+                                                    <state key="normal" title="Help"/>
+                                                </button>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                    </navigationItem>
                                 </items>
-                            </toolbar>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-da-Y0J">
+                                <rect key="frame" x="0.0" y="64" width="1376" height="500"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="lHv-QN-gcR" kind="embed" id="justdidthiswithcodeeditinglol"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbF-L5-oKs">
+                                <rect key="frame" x="0.0" y="562" width="1376" height="470"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="oUg-6h-xAn" kind="embed" id="BNp-PE-dzt"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,7 +445,39 @@ Gw
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.1186440677966107" y="-24.146341463414632"/>
+            <point key="canvasLocation" x="-7.412790697674418" y="-24.418604651162791"/>
+        </scene>
+        <!--Timeline-->
+        <scene sceneID="ELN-hB-zR8">
+            <objects>
+                <viewController title="Timeline" id="oUg-6h-xAn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gU6-uJ-yNS">
+                        <rect key="frame" x="0.0" y="0.0" width="1376" height="470"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-pW-rvO">
+                                <rect key="frame" x="597" y="24" width="191" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hnx-5V-pIL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="og7-hV-Qds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="478"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="bsx-9M-fOf">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="lHv-QN-gcR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xv-Cj-ZWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="-511"/>
         </scene>
     </scenes>
     <resources>
